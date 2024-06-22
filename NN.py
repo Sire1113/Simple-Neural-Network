@@ -143,9 +143,9 @@ if __name__ == '__main__':
     # ------------------------数据集-----------------------------
     X_data, y_data = generate_logistic_regression_data(samples=500)
     X_data = X_data.T
+    y_data = y_data.reshape(1, -1)
     X_train = X_data[:, 0:350]  # 训练集
     y_train = y_data[:, 0:350]
-    y_data = y_data.reshape(1, -1)
     X_test = X_data[:, 351:501]  # 测试集
     y_test = y_data[:, 351:501]
     L1 = Dense(8, Dense.relu)
